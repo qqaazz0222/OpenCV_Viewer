@@ -46,6 +46,7 @@ class Streamer :
         while True:
             if self.started :
                 (grabbed, frame) = self.capture.read() 
+                cv2.putText(freme, "Hello World!", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
                 if grabbed : 
                     self.Q.put(frame)
 
