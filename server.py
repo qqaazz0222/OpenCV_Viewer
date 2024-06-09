@@ -26,7 +26,6 @@ def stream_gen( src ):
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')         
     except GeneratorExit :
-        #print( '[wandlab]', 'disconnected stream' )
         streamer.stop()
 
 app.run( host='0.0.0.0', port=5000 )
