@@ -1,11 +1,12 @@
-from flask import Flask
-from flask import request
-from flask import Response
-from flask import stream_with_context
+from flask import Flask, request, Response, stream_with_context, render_template
 from streamer import Streamer
 
 app = Flask( __name__ )
 streamer = Streamer()
+
+@app.route('/')
+def main():
+    return render_template("index.html", data='전달데이터')
 
 @app.route('/stream')
 def stream():
